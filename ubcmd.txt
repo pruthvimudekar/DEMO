@@ -1,2 +1,61 @@
 wsl --install
 wsl --install -d Ubuntu-24.04
+
+
+mvn exp 
+
+Field	Value
+Group Id	com.example
+Artifact Id	MavenDemo
+
+Apache Maven 3.9.16 Binary ZIP
+mvn clean compile test package install   -> jar file create
+java -jar -> to run jar file
+
+
+pom.xml code 
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>MavenDemo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.HelloWorld</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+
+jenkkins exp 
+
+remove task on 8080
+netstat -ano | findstr :8080
+
+taskkill /PID 12345 /F
